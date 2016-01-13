@@ -1,6 +1,6 @@
-FROM ubuntu:latest
+FROM ubuntu:14.04
 RUN apt-get update && \
-  apt-get install -y apache2
+  apt-get install -y apache2 apache2-utils vim curl telnet && \
+  apt-get clean
 EXPOSE 80
-ENTRYPOINT ["apachectl"]
-CMD ["-D","FOREGROUND"]
+CMD ["apachectl","-D","FOREGROUND"]
