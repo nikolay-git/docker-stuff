@@ -4,5 +4,5 @@ machine:
 test:
   override:
     - docker build -t box .
-    - docker run -d --name=apache_box_01 -p 80:80 box_01
+    - docker run -d --name=apache_box -p 80:80 box
     - curl --retry 10 --retry-delay 5 -v http://localhost:80
