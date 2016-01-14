@@ -6,3 +6,8 @@ test:
     - docker build -t box .
     - docker run -d --name=apache_box -p 80:80 box
     - curl --retry 10 --retry-delay 5 -v http://localhost:80
+deployment:
+  dockerhub:
+    branch: master
+    commands:
+      - $DOCKER_HUB_TRIGGER
